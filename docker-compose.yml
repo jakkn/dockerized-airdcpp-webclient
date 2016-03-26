@@ -1,0 +1,11 @@
+server:
+  build: .
+
+  volumes:
+    - ~/.airdc++:/root/.airdc++
+
+  command: airdcppd
+
+  ports:
+    - "5600:5600"
+    - "5601:5601"
