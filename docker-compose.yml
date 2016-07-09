@@ -1,5 +1,5 @@
 server:
-  build: .
+  image: jakkn/airdcpp-webclient
 
   volumes:
     - ~/.airdc++:/root/.airdc++
