@@ -32,10 +32,11 @@ RUN buildDeps=' \
     && apt-get update && apt-get install -y $buildDeps $libDeps $websocket \
 # Build and install airdcpp-webclient
     && git clone https://github.com/airdcpp-web/$repository.git \
-    && cd $repository \
+    && pushd $repository \
     && cmake . \
     && make -j2 \
     && make install \
+    && popd \
     && rm -rf $repository \
 # Remove build dependencies and all apt traces
     && rm -rf /var/lib/apt/lists/* \
